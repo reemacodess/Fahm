@@ -1,0 +1,11 @@
+ا{
+  "name": "fahm-platform",
+  "version": "1.0.0",
+  "description": "Fahm (فَهم) - Arabic AI-Powered Customer Complaint Management Platform",
+  "scripts": {
+    "dev": "python run_server.py 8080",
+    "start": "python run_server.py 8080"
+  },
+  "author": "Fahm Team",
+  "license": "ISC"
+}

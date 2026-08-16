@@ -1,0 +1,134 @@
+/* Custom CSS for Fahm (فَهم) Platform */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+:root {
+  --primary: #0052cc;
+  --primary-dark: #003d9b;
+  --surface: #f8f9ff;
+  --surface-card: #ffffff;
+  --ai-violet: #6a36d3;
+  --ai-violet-light: #eff4ff;
+  --success-green: #137333;
+  --error-red: #ba1a1a;
+}
+
+body {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  background-color: #f8f9ff;
+  color: #0b1c30;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+/* Ambient Shadows based on Stitch DESIGN.md */
+.shadow-level-1 {
+  box-shadow: 0px 4px 15px rgba(0, 82, 204, 0.05);
+}
+
+.shadow-level-2 {
+  box-shadow: 0px 10px 30px rgba(0, 82, 204, 0.08);
+}
+
+.shadow-modal {
+  box-shadow: 0px 20px 40px rgba(11, 28, 48, 0.15);
+}
+
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 24px rgba(0, 82, 204, 0.09);
+}
+
+/* Interactive Buttons */
+.btn-interactive {
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-interactive:active {
+  transform: scale(0.97);
+}
+
+.btn-interactive:hover {
+  transform: translateY(-1px);
+}
+
+/* AI Shimmer & Pulse Animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(0.98); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.6; transform: scale(0.85) rotate(15deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pulse-badge {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.sparkle-icon {
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.ai-shimmer {
+  background: linear-gradient(90deg, 
+    #ffffff 0%, 
+    rgba(238, 242, 255, 0.9) 50%, 
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

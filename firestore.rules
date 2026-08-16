@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Fahm MVP: Allow read and write for complaints and knowledge base in development/demo mode
+    match /complaints/{complaintId} {
+      allow read, write: if true;
+    }
+    match /knowledge_items/{itemId} {
+      allow read, write: if true;
+    }
+    match /stats/{statId} {
+      allow read, write: if true;
+    }
+  }
+}
